@@ -1,0 +1,17 @@
+server:
+  port: 9900
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  client:
+    #false标识不向注册中心注册自己
+    registerWithEureka: true
+    #false表示注册中心就是自己，职责就是维护服务实例，并不需要去检索服务
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eurak9901.com:9901/eureka/
+  instance:
+    hostname: eurak9900.com
