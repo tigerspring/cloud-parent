@@ -14,9 +14,6 @@ public class PaymentService {
     @Value("${thread.sleep.time}")
     private Long sleepTime;
 
-    /*@HystrixCommand(fallbackMethod = "paymentFallback",commandProperties = {
-            @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value = "3000")
-    })*/
     public String paymentTimeOut() {
         try {
             TimeUnit.SECONDS.sleep(sleepTime);
@@ -25,8 +22,5 @@ public class PaymentService {
         }
         System.out.println("执行超时方法");
         return "paymentTimeOut_3s 成功";
-    }
-    public String paymentFallback(){
-        return "paymentFallback 失败";
     }
 }

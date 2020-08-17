@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Component
-@FeignClient(value = "PAYMENT-HYSTRIX-SERVER")
+@FeignClient(value = "PAYMENT-HYSTRIX-SERVER",fallback = PaymentServiceFallback.class)
 public interface PaymentHystrixInterface {
     @GetMapping(value = "/hystrix/payment/payment")
     String payment();

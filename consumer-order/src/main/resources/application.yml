@@ -12,11 +12,7 @@ eureka:
     #false表示注册中心就是自己，职责就是维护服务实例，并不需要去检索服务
     fetch-registry: true
     service-url:
-      defaultZone: http://osc:9901/eureka/,http://osc2:9900/eureka/
-  instance:
-    hostname: eurak9900.com
-    prefer-ip-address: true
-    instance-id: consumer-order01
+      defaultZone: http://eurak9901.com:9901/eureka/,http://eurak9900.com:9900/eureka/
 
 feign:
   hystrix:

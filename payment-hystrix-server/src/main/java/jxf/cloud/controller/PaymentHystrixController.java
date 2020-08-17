@@ -30,7 +30,4 @@ public class PaymentHystrixController {
     }
 
 
-    public String paymentFallback(){
-        return "paymentFallback 失败";
-    }
 }
