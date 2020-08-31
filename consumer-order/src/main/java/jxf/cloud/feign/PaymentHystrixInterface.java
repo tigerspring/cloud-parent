@@ -5,6 +5,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ * 指定降级处理类
+ */
 @Component
 @FeignClient(value = "PAYMENT-HYSTRIX-SERVER",fallback = PaymentServiceFallback.class)
 public interface PaymentHystrixInterface {

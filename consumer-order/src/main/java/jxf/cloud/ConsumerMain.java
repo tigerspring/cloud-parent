@@ -10,6 +10,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableCircuitBreaker
 public class ConsumerMain {
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerMain.class,args);
+        SpringApplication.run( ConsumerMain.class , args);
     }
 }
