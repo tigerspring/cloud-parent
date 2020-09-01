@@ -13,7 +13,7 @@ public class PaymentHystrixController {
     @Autowired
     PaymentService paymentService;
 
-    @GetMapping("paymentTimeOut")
+    @GetMapping("/paymentTimeOut")
     public String paymentTimeOut(){
         return paymentService.paymentTimeOut();
     }

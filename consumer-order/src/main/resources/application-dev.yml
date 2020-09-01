@@ -9,6 +9,7 @@ spring:
       retry:
         enabled: false
 
+
 eureka:
   client:
     #false标识不向注册中心注册自己
@@ -19,10 +20,33 @@ eureka:
       defaultZone: http://osc2:9901/eureka/,http://osc:9900/eureka/
 
 
+
 feign:
   client:
     config:
       # default 全局配置，超时时间，防止feign重复执行
       default:
-        connectTimeout: 1000
-        readTimeout: 6000
+        connectTimeout: 2000
+        readTimeout: 5000
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    #通过feign调用时，可以通过default更新hystrix属性
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+    #@hystrixCommad 通过 commandKey 指定
+    paymentTimeOut:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+    feignTimeOut:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000

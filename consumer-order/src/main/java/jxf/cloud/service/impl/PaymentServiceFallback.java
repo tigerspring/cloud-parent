@@ -1,5 +1,8 @@
 package jxf.cloud.service.impl;
 
+import com.netflix.hystrix.HystrixKey;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import jxf.cloud.feign.PaymentHystrixInterface;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +15,7 @@ public class PaymentServiceFallback implements PaymentHystrixInterface {
     public String payment() {
         return "payment fall back";
     }
+
 
     @Override
     public String paymentTimeOut() {

@@ -21,4 +21,4 @@ eureka:
 
 thread:
   sleep:
-    time: 3
+    time: 1000

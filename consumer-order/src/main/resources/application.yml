@@ -13,7 +13,3 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eurak9901.com:9901/eureka/,http://eurak9900.com:9900/eureka/
-
-feign:
-  hystrix:
-    enabled: true
