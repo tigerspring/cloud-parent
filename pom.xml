@@ -25,6 +25,7 @@
         <module>consumer-order</module>
         <module>payment-server</module>
         <module>payment-hystrix-server</module>
+        <module>mianshi</module>
     </modules>
 
 

@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: consumer-order
+# retry 全局配置，超时时间，防止feign重复执行
   cloud:
     loadbalancer:
       retry:
@@ -22,12 +23,6 @@ eureka:
 
 
 feign:
-  client:
-    config:
-      # default 全局配置，超时时间，防止feign重复执行
-      default:
-        connectTimeout: 2000
-        readTimeout: 5000
   hystrix:
     enabled: true
 

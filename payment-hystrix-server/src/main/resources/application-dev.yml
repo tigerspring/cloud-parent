@@ -1,5 +1,8 @@
 server:
   port: 9820
+  tomcat:
+    threads:
+      max: 200
 
 spring:
   application:
@@ -17,6 +20,7 @@ eureka:
     hostname: osc
     prefer-ip-address: true
     instance-id: payment-hystrix-server01
+
 
 
 thread:
