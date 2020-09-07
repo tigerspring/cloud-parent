@@ -44,9 +44,9 @@ public class ThreadLocalTestController {
     @GetMapping("/test1/{userId}")
     public Map test1(@PathVariable Integer userId) throws InterruptedException, ExecutionException {
         System.out.println(Thread.currentThread().getName()+"    +    test1");
-
-        System.out.println(paymentService.getAnimal(userId).get());
-        return paymentService.getAnimal(userId).get();
+        Map map = paymentService.getAnimal(userId).get();
+        System.out.println(map);
+        return map;
     }
 
 

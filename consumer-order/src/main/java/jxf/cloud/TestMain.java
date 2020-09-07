@@ -8,15 +8,16 @@ import java.util.Map;
 public class TestMain {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         RestTemplate restTemplate = new RestTemplate();
 
-        for(int i = 0 ; i< 5 ; i++){
+        for(int i = 0 ; i< 10 ; i++){
             final int finalI = i;
             new Thread(()->{
                 Map map = restTemplate.getForObject("http://localhost:9700/test1/"+finalI, Map.class);
                 System.out.println("param:"+finalI + "   resutrn map:"+map );
             }).start();
+            Thread.sleep(20);
         }
 
 
