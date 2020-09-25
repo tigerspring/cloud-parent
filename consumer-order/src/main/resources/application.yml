@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: consumer-order
+  # retry 全局配置，超时时间，防止feign重复执行
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false
+
 
 eureka:
   client:
@@ -12,4 +18,22 @@ eureka:
     #false表示注册中心就是自己，职责就是维护服务实例，并不需要去检索服务
     fetch-registry: true
     service-url:
-      defaultZone: http://eurak9901.com:9901/eureka/,http://eurak9900.com:9900/eureka/
+#      defaultZone: http://eurak9901.com:9901/eureka/,http://eurak9900.com:9900/eureka/
+      defaultZone: http://osc2:9901/eureka/,http://osc:9900/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 1153000
+        readTimeout: 1155000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000

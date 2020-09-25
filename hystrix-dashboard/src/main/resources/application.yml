@@ -1,12 +1,7 @@
-server:
-  port: 9820
-  tomcat:
-    threads:
-      max: 200
-
 spring:
   application:
-    name: payment-hystrix-server
+    name: hystrix-dashboard
+
 
 eureka:
   client:
@@ -16,10 +11,10 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://osc2:9901/eureka/,http://osc:9900/eureka/
-  instance:
-    hostname: osc
-    prefer-ip-address: true
-    instance-id: payment-hystrix-server01
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"
 
 
 #暴露全部的监控信息
@@ -28,7 +23,3 @@ management:
     web:
       exposure:
         include: "*"
-
-thread:
-  sleep:
-    time: 1000

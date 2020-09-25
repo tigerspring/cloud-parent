@@ -19,7 +19,8 @@ public class PaymentService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(new Date()+"     执行超时方法");
+        String ss = null;
+        ss.toLowerCase();
         return "paymentTimeOut_3s 成功";
     }
 }

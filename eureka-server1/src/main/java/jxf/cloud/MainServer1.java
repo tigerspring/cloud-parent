@@ -9,10 +9,8 @@ import org.springframework.context.ApplicationContext;
 @EnableEurekaServer
 public class MainServer1 {
 
-    ApplicationContext applicationContext;
 
     public static void main(String[] args) {
         SpringApplication.run(MainServer1.class,args);
-        applicationContext.getBean()
     }
 }

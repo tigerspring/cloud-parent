@@ -26,6 +26,9 @@
         <module>payment-server</module>
         <module>payment-hystrix-server</module>
         <module>mianshi</module>
+        <module>bio-nio-aio</module>
+        <module>spring-code</module>
+        <module>hystrix-dashboard</module>
     </modules>
 
 
